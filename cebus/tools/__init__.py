@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 '''
-    Mango tools
+    Cebus tools
 '''
-# This file is part of mango.
+# This file is part of cebus.
 #
 # Distributed under the terms of the last AGPL License. The full
 # license is in the file LICENCE, distributed as part of this
@@ -23,7 +23,7 @@ from tornado import gen
 @gen.engine
 def check_json(struct, callback):
     '''
-        Mango check json
+        Cebus check json
     
         Check for malformed JSON Object
         < kind of iterator/function >
@@ -45,7 +45,7 @@ def check_json(struct, callback):
 @gen.engine
 def check_account_type(db, account, account_type, callback):
     '''
-        Mango check account type
+        Cebus check account type
 
         check account type
     '''
@@ -67,7 +67,7 @@ def check_account_type(db, account, account_type, callback):
 @gen.engine
 def check_account_authorization(db, account, password, callback):
     '''
-        Mango check account authorization
+        Cebus check account authorization
 
         Check account authorization
     '''
@@ -85,7 +85,7 @@ def check_account_authorization(db, account, password, callback):
 @gen.engine
 def convert_timestamp(start, stop, callback):
     '''
-        Mango convert timestamp
+        Cebus convert timestamp
 
         Kind of better name for check_timestamp
     
@@ -97,7 +97,7 @@ def convert_timestamp(start, stop, callback):
 @gen.engine
 def check_timestamp(start, stop, callback):
     '''
-        Mango check timestamp
+        Cebus check timestamp
 
         Return datetime if gets a unix timestamp
     '''
@@ -113,7 +113,7 @@ def check_timestamp(start, stop, callback):
 
 def clean_structure(struct):
     '''
-        Mango clean structure
+        Cebus clean structure
     '''
     struct = struct.to_primitive()
 
@@ -127,7 +127,7 @@ def clean_structure(struct):
 
 def clean_results(results):
     '''
-        Mango clean results
+        Cebus clean results
     '''
     results = results.to_primitive()
 
@@ -145,7 +145,7 @@ def clean_results(results):
 
 def content_type_validation(handler_class):
     '''
-        Mango content-type validation
+        Cebus content-type validation
 
         @content_type_validation decorator
     '''

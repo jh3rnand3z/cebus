@@ -62,7 +62,7 @@ __author__ = 'Jean Chassoul'
 
 from tornado import gen
 
-from cebus.models import Cohort, Centuria, Node
+from cebus.messages import Cohort, Centuria, Node
 
 class BasicCommands(object):
 	'''

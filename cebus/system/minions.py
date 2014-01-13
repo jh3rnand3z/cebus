@@ -7,7 +7,7 @@ import motor
 
 from tornado import gen
 
-from cebus.models import minions
+from cebus.messages import minions
 
 #minions
 #decanus

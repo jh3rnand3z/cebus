@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-    Mango daemon configuration options
+    Cebus daemon configuration options
 '''
 import base64
 import uuid

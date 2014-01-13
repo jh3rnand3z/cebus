@@ -12,7 +12,7 @@ from tornado import gen
 from bson import json_util
 from bson import objectid
 
-from cebus.models import applications
+from cebus.messages import applications
 
 
 class Daemons(object):

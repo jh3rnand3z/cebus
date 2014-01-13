@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 '''
-    Mango errors
+    Cebus errors
 '''
 
 
 class Error(object):
     '''
-        Mango custom error class
+        Cebus custom error class
     '''
     
     def __init__(self, error):
@@ -16,11 +16,11 @@ class Error(object):
     
     def model(self, model_name):
         '''
-            Mango error model
+            Cebus error model
 
             Dataset model
             
-            model_name: Model name of the mango dataset to analize
+            model_name: Model name of the cebus dataset to analize
         '''
         model_name = ''.join((model_name, ' resource'))
         self.message = self.error.split('-')[0].strip(' ').replace(
@@ -35,7 +35,7 @@ class Error(object):
         
     def duplicate(self, resource, field, value):
         '''
-            Mango duplicate error
+            Cebus duplicate error
 
             Resource, field, value:
             Users username [\"ooo"\] already exists.
@@ -53,7 +53,7 @@ class Error(object):
     
     def json(self):
         '''
-            Mango json error
+            Cebus json error
         '''
         self.message = 'Invalid JSON Object'
         self.data = self.error
@@ -65,7 +65,7 @@ class Error(object):
     
     def missing(self, resource, name):
         '''
-            Mango missing error
+            Cebus missing error
         '''
         self.message = 'Missing %s resource [\"%s\"].' % (resource, name)
         self.data = self.error
@@ -77,7 +77,7 @@ class Error(object):
     
     def invalid(self, resource, name):
         '''
-            Mango invalid error
+            Cebus invalid error
         '''
         self.message = 'Invalid %s resource [\"%s\"].' % (resource, name)
         self.data = self.error
