@@ -12,12 +12,19 @@ __author__ = 'Jean Chassoul'
 
 # Remember Gabo Naum.
 
+import uuid
+
+from schematics import models
+from schematics import types
+from schematics.types import compound
 
 # missing capuchin centurion, squirrels, hawks
 
-
 # organizational unit order on cohort, colony and forest structures moved to messages __init__.py
 
+# order on cluster, node and cloud make roman stuff with those tools.
+
+uuid = types.UUIDType(default=uuid.uuid4)
 
 class ZergUnits(object):
 	

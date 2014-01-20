@@ -1,7 +1,15 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 '''
     Cebus daemon configuration options
 '''
+# This file is part of cebus.
+#
+# Distributed under the terms of the last AGPL License. 
+# The full license is in the file LICENCE, distributed as part of this software.
+
+__author__ = 'Jean Chassoul'
+
+
 import base64
 import uuid
 import os
@@ -21,6 +29,7 @@ def options():
     # cebus debug mode
     
     # TODO: add, check and test the debug mode.
+
     # tornado.options.define('debug', default=False, type=bool, help=(
     #     'Turn on autoreload, log to stderr only'))
     # tornado.options.define('logdir', type=str, default='log', help=(
