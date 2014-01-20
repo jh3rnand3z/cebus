@@ -9,12 +9,8 @@ from tornado import gen
 
 from cebus.messages import minions
 
-#minions
-#decanus
-#centurions
-#guards
-#cubes
-# cubes are optio's
+
+
 
 class Minions(object):
     '''

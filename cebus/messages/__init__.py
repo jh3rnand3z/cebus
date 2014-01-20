@@ -20,7 +20,7 @@ from schematics import types
 from schematics.types import compound
 
 
-class BaseUnit(models.Model):
+class Unit(models.Model):
 	'''
 		Cebus base unit model
 	'''
@@ -32,7 +32,14 @@ class BaseUnit(models.Model):
     cores = types.IntType(default=8)
 
 
-class Cohort(BaseUnit):
+class Node(Unit):
+    '''
+        Node basic data structure
+    '''
+    minions = compound.ListType(types.StringType())
+
+
+class Cluster(Unit):
     '''
         Cohort data structure
     '''
@@ -40,7 +47,15 @@ class Cohort(BaseUnit):
     centurias = compound.ListType(types.StringType())
 
 
-class Centuria(BaseUnit):
+class Cohort(Unit):
+    '''
+        Cohort data structure
+    '''
+    cores = types.IntType(default=480)
+    centurias = compound.ListType(types.StringType())
+
+
+class Centuria(Unit):
     '''
         Centuria data structure
     '''
@@ -48,8 +63,72 @@ class Centuria(BaseUnit):
     nodes = compound.ListType(types.StringType())
 
 
-class Node(BaseUnit):
+class CohortModel(object):
     '''
-        Node basic data structure
+        Legionary base cohort
     '''
-    minions = compound.ListType(types.StringType())
+    centurias
+    contubernium
+    legionaries
+
+    def decanus
+
+    def centurions
+
+    def servants
+
+    def legionaries
+
+
+class ProtossModel(object):
+    '''
+        Protoss base tribe
+    '''
+    tribes
+    pylons
+    templars
+
+    def zealot
+
+    def dragoons
+
+    def prove
+
+    def templars
+
+
+class ZergModel(object):
+    '''
+        Zerg base colony
+    '''
+    colonies
+    overlords
+    units
+
+    def overlords
+
+    def cerebrates
+
+    def drones
+    
+    def units
+
+
+
+class ForestModel(object):
+    '''
+        Capuchin base forest
+    '''
+    clusters
+    nodes
+    cores
+
+    def overlords
+
+    def cebus
+
+    def servants
+
+    def minions
+
+

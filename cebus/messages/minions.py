@@ -1,0 +1,83 @@
+# missing capuchin centurion, squirrels, hawks
+
+
+# organizational unit order on cohort, colony and forest structures moved to messages __init__.py
+
+
+class ZergUnits
+	
+	def overlord
+		'''
+			Overlord system commander unit and portable home,
+			unit analogous to legio contubernium plus decanus minion.
+		'''
+
+	def drone
+
+	def cerebrate
+
+	def zergling
+
+	def queen
+
+
+
+
+class Spider(object):
+	
+
+class Howler(object):
+	'''
+		Communication skills
+	'''
+
+class Peccary(object):
+	'''
+		Data skills
+	'''
+
+
+class CapuchinUnits
+
+	def scourge
+		'''
+			analogous to overlord and decanus
+		'''
+
+	def squirrel
+
+	def cebus
+
+	def spider
+		'''
+			HTTP web spider
+		'''
+
+	def howler
+		'''
+			RTC signals howler
+		'''
+
+	def peccary
+		'''
+			Data peccary
+		'''
+
+	def capuchin
+
+	def hawk
+
+
+
+
+
+class LegionaryUnits
+	
+	def servant
+
+	def decanus
+
+	def centurion
+
+	def legionary
+
