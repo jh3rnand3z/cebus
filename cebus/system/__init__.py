@@ -2,14 +2,12 @@
 '''
     Central Execution Bus UNIX System Utility Supervisor.
     
-    Cebus for short; cebus artificial intelligence system; 
-    cebus is a ai system utility supervisor for computing clouds.
+    Cebus for short; cebus AI supervisor for computing clouds.
 '''
 
 # This file is part of cebus.
-#
-# Distributed under the terms of the last AGPL License. 
 
+# Distributed under the terms of the last AGPL License. 
 # The full license is in the file LICENCE, distributed as part of this software.
 
 # The hunter told him that this was, without a doubt, the hoof print 

@@ -1,10 +1,25 @@
+# -*- coding: utf-8 -*-
+'''
+    Cebus minions models and messages
+'''
+# This file is part of cebus.
+
+# Distributed under the terms of the last AGPL License. 
+# The full license is in the file LICENCE, distributed as part of this software.
+
+__author__ = 'Jean Chassoul'
+
+
+# Remember Gabo Naum.
+
+
 # missing capuchin centurion, squirrels, hawks
 
 
 # organizational unit order on cohort, colony and forest structures moved to messages __init__.py
 
 
-class ZergUnits
+class ZergUnits(object):
 	
 	def overlord
 		'''
