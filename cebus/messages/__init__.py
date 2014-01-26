@@ -12,6 +12,8 @@ __author__ = 'Jean Chassoul'
 
 # Remember Gabo Naum.
 
+# unit, node, cluster, cohort, cloud... (5) five stuff rule.
+
 import uuid
 
 from schematics import models
@@ -19,115 +21,107 @@ from schematics import types
 from schematics.types import compound
 
 
+
+class ResourceContainer(models.Model):
+    '''
+        Cebus resource container
+    '''
+    contains = compound.ListType(types.UUIDType())
+
+    total = types.IntType()
+
+
+class ContactsContainer(models.Model):
+    '''
+        Contacts addresses container
+    '''
+    addresses = compound.ModelType(ResourceContainer)
+
+    total = types.IntType()
+
+
+class Resource(models.Model):
+    ''' 
+        Cebus system resource
+    '''
+    applications = compound.ModelType(ResourceContainer)
+    analogies = compound.ModelType(ResourceContainer)
+    behaviours = compound.ModelType(ResourceContainer)
+    campaings = compound.ModelType(ResourceContainer)
+
+    goals = compound.ModelType(ResourceContainer)
+    strategies = compound.ModelType(ResourceContainer)
+    daemons = compound.ModelType(ResourceContainer)
+
+    minions = compound.ModelType(ResourceContainer)
+
+    nodes = compound.ModelType(ResourceContainer)
+    clusters = compound.ModelType(ResourceContainer)
+    cohorts = compound.ModelType(ResourceContainer)
+    clouds = compound.ModelType(ResourceContainer)
+
+    stations = compound.ModelType(ResourceContainer)
+    structures = compound.ModelType(ResourceContainer)
+
+    total = types.IntType()
+
+
 class Unit(models.Model):
-	'''
-		Cebus base unit model
-	'''
-	active = types.BooleanType(default=True)
-    uuid = types.UUIDType(default=uuid.uuid4)
+    '''
+        Cebus base unit model
+    '''
     name = types.StringType(required=False)
+    uuid = types.UUIDType(default=uuid.uuid4)
+
+    contacts = compound.ModelType(ContactsContainer)
+
     url = types.URLType()
     urls = compound.ListType(types.StringType())
-    cores = types.IntType(default=8)
+
+    resources = compound.ModelType(Resource)
+
+    cores = types.IntType(default=1)
+    total = types.IntType()
 
 
 class Node(Unit):
     '''
         Node basic data structure
     '''
-    minions = compound.ListType(types.StringType())
+    cebus = types.URLType(default=False)
+    overlord =  types.URLType(default=True)
+    minions = compound.ModelType(Unit)
+    servants = compound.ModelType(Unit)
+
+    cores = types.IntType(default=8)
+    total = types.IntType()
 
 
 class Cluster(Unit):
     '''
-        Cohort data structure
+        Cluster data structure
     '''
-    cores = types.IntType(default=480)
-    centurias = compound.ListType(types.StringType())
+    nodes = compound.ModelType(Node)
+
+    cores = types.IntType(default=80)
+    total = types.IntType()
 
 
 class Cohort(Unit):
     '''
         Cohort data structure
     '''
+    clusters = compound.ModelType(Cluster)
+
     cores = types.IntType(default=480)
-    centurias = compound.ListType(types.StringType())
+    total = types.IntType()
 
 
-class Centuria(Unit):
+class Cloud(Unit):
     '''
-        Centuria data structure
+        Cloud data structure
     '''
-    cores = types.IntType(default=80)
-    nodes = compound.ListType(types.StringType())
+    cohorts = compound.ModelType(Cohort)
 
-
-class CohortModel(object):
-    '''
-        Legionary base cohort
-    '''
-    centurias
-    contubernium
-    legionaries
-
-    def decanus
-
-    def centurions
-
-    def servants
-
-    def legionaries
-
-
-class ProtossModel(object):
-    '''
-        Protoss base tribe
-    '''
-    tribes
-    pylons
-    templars
-
-    def zealot
-
-    def dragoons
-
-    def prove
-
-    def templars
-
-
-class ZergModel(object):
-    '''
-        Zerg base colony
-    '''
-    colonies
-    overlords
-    units
-
-    def overlords
-
-    def cerebrates
-
-    def drones
-    
-    def units
-
-
-
-class ForestModel(object):
-    '''
-        Capuchin base forest
-    '''
-    clusters
-    nodes
-    cores
-
-    def overlords
-
-    def cebus
-
-    def servants
-
-    def minions
-
-
+    cores = types.IntType(default=4800)
+    total = types.IntType()
