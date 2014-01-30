@@ -62,7 +62,7 @@ class Legionary(BaseMinion):
 
 class Servant(BaseMinion):
 	'''
-		Roman slave
+		Roman Slave
 	'''
 	pass
 
@@ -107,9 +107,9 @@ class Cerebrate(Cluster):
 	pass
 
 
-class Overlord(BaseMinion):
+class Larva(BaseMinion):
 	'''
-		ZergORG Overlord
+		New and freaking out! Unexpected eggs
 	'''
 	pass
 
@@ -143,7 +143,6 @@ class ZergORG(models.Model):
 
 
 		###Some notes about the species
-		
 
 		the ZergORG do not use technology; 
 
@@ -259,6 +258,19 @@ class Scourge(BaseMinion):
 class CapuchinORG(models.Model):
 	'''
 		CapuchinORG schematics
+		----------------------
+
+		hablada de mierda.
+
+		bosques, squirrels, capuchinos, hawks, peccaries, howlers, scourges
+
+		el ultimo comodin, howlers communicacion, peccaries databases, 
+		hawks supervisor overlords, capuchin standard legionary, 
+		squirrels are slaves, all live in the forest.
+
+		
+
+
 	'''
 	cebus = compound.ModelType(Cebus)
 	hawks = compound.ModelType(Hawk)

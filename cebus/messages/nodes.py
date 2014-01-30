@@ -10,13 +10,15 @@
 __author__ = 'Jean Chassoul'
 
 
+# Remember Gabo Naum.
 
+from schematics import models
+from schematics import types
+from schematics.types import compound
 
 from cebus.messages import Node
-from cebus.messages.minions import Overlord
+from cebus.messages.minions import Larva
 
-
-# (unit), [node, cluster, cohort, cloud]
 
 
 class Conturbernium(Node):
@@ -26,7 +28,6 @@ class Conturbernium(Node):
 	'''
 	centurion = types.URLType(default=False)
     decanus =  types.URLType(default=True)
-
 
 
 class Treant(Node):
@@ -64,4 +65,5 @@ class Overlord(Overlord):
 
 		As your forces grow in number, you must hatch more Overlords to control them.
 	'''
-	
+	queen = types.URLType(default=False)
+	cerebrate = types.URLType(default=True)
