@@ -20,6 +20,8 @@ from schematics.types import compound
 
 from cebus.messages import Unit
 
+from cebus.messages import Node
+
 
 
 class BaseMinion(Unit):
@@ -35,19 +37,65 @@ class BaseMinion(Unit):
     # timezone = StringType(required=True)
 
 
-# here comes the swarm
+# the fucking legion
 
-
-class Drone(BaseMinion):
+class Centurion(BaseMinion):
 	'''
-		ZergORG Drone
+		Roman Centurion
 	'''
 	pass
 
 
-class Overlord(BaseMinion):
+class Decanus(BaseMinion):
 	'''
-		ZergORG Overlord
+		Roman Decanus
+	'''
+	pass
+
+
+class Legionary(BaseMinion):
+	'''
+		Roman Legionary
+	'''
+	pass
+
+
+class Servant(BaseMinion):
+	'''
+		Roman slave
+	'''
+	pass
+
+
+class LegionaryORG(models.Model):
+	'''
+		LegionaryORG schematics
+		-----------------------
+
+		The Legion comprised ten cohorts, known simply as "the first cohort",
+		"the second cohort" etc.
+
+		The first cohort was considered to be the most senior and prestigious,
+		and the tenth the least.
+
+		A cohort consisted of approximately 480 men and commanded by one man.
+
+		It consisted of six centuriae of 80 men, each commanded by a centurion 
+		assisted by junior officers.
+
+		The most senior centurion of the six command the entire cohort.
+	'''
+	centurion = compound.ModelType(Centurion)
+	decanus = compound.ModelType(Decanus)
+	legionary = compound.ModelType(Legionary)
+	servant = compound.ModelType(Servant)
+
+
+# the swarm
+
+class Queen(BaseMinion):
+	'''
+		ZergORG Queen
 	'''
 	pass
 
@@ -59,6 +107,13 @@ class Cerebrate(Cluster):
 	pass
 
 
+class Overlord(BaseMinion):
+	'''
+		ZergORG Overlord
+	'''
+	pass
+
+
 class Ling(Unit):
 	'''
 		ZergORG Ling
@@ -66,39 +121,66 @@ class Ling(Unit):
 	pass
 
 
+class Drone(BaseMinion):
+	'''
+		ZergORG Drone
+	'''
+	pass
+
+
 class ZergORG(models.Model):
 	'''
 		ZergORG schematics
+		------------------
+
+		The Queen controls the Swarm through secondary agents called cerebrates. 
+
+		Cerebrates command an individual cohort of ZergORG, 
+		each with a distinct tactical role within the hierarchy. 
+
+		Cerebrates further delegate power through the use of overlords 
+		for battlefield direction and queens for hive watch.
+
+
+		###Some notes about the species
+		
+
+		the ZergORG do not use technology; 
+
+		Instead, they assimilate other species traits by directed mutation
+		in order to match such technology.
+
+		ZergORG units are designed to be cheap and fast to produce,
+		encouraging players to overwhelm their opponents with sheer numbers.
 	'''
-	drones = compound.ModelType(Drone)
-	overlords = compound.ModelType(Overlord)
+	queens = compound.ModelType(Queen)
 	cerebrates = compound.ModelType(Cerebrate)
+	overlords = compound.ModelType(Overlord)
 	lings = compound.ModelType(Ling)
+	drones = compound.ModelType(Drone)
 
 
-class MinionNode(Unit):
+# tropical cloud forest
+
+class TropicalNode(Node):
     '''
         Node basic data structure
     '''
     # minion centurion
     cebus = types.URLType(default=False)
     # minion overlord
-    hawks =  types.URLType(default=True)
+    hawks = types.URLType(default=True)
     # minion units
     capuchins = compound.ModelType(Unit)
-
     # minion squirrel servants
     squirrels = compound.ModelType(Unit)
-
-    cores = types.IntType(default=8)
-    total = types.IntType()
 
 
 class MinionCluster(Unit):
     '''
         Minion cluster schematics
     '''
-    nodes = compound.ModelType(MinionNode)
+    nodes = compound.ModelType(TropicalNode)
 
     cores = types.IntType(default=80)
     total = types.IntType()
@@ -148,14 +230,14 @@ class Capuchin(BaseMinion):
 
 class Spider(BaseMinion):
 	'''
-		Spider immune
+		Web Spider monkey
 	'''
 	pass
 
 
 class Howler(BaseMinion):
 	'''
-		Howler monkey
+		Communication Howler monkey
 	'''
 	pass
 
@@ -178,15 +260,16 @@ class CapuchinORG(models.Model):
 	'''
 		CapuchinORG schematics
 	'''
-	squirrels = compound.ModelType(Squirrel)
-	hawks = compound.ModelType(Hawk)
 	cebus = compound.ModelType(Cebus)
+	hawks = compound.ModelType(Hawk)
 	capuchins = compound.ModelType(Capuchin)
+	squirrels = compound.ModelType(Squirrel)
 
 
 class CapuchinImmunes(Unit):
 	'''
-		Immune units 
+		Immune units
+		------------
 	
 		The inmune concept born again from the roman legion
 		just go a little back in time you!
@@ -200,15 +283,6 @@ class CapuchinImmunes(Unit):
 
 		types of stuff: small, medium, high
 	'''
-	# http web spiders
-	spiders = compound.ModelType(Spider)
-	# sip real-time communication howlers
-	howlers = compound.ModelType(Howler)
-	# data peccaries
-	peccaries = compound.ModelType(Peccary)
-
-	# here you have a clean canvas.
-	scourges = compound.ModelType(Scourge)
 
 	# Inmunes unit skills
 	# the hole inmmune concept born again from legionary organization 
@@ -225,46 +299,12 @@ class CapuchinImmunes(Unit):
 
 	# Immunes worker basic contructor advanced constructor 
 
-	# types of stuff: small, medium, high.
+	# http web spiders
+	spiders = compound.ModelType(Spider)
+	# sip real-time communication howlers
+	howlers = compound.ModelType(Howler)
+	# data peccaries
+	peccaries = compound.ModelType(Peccary)
 
-
-# the legion
-
-class Servant(BaseMinion):
-	'''
-		Roman slave
-	'''
-	pass
-
-
-class Decanus(BaseMinion):
-	'''
-		Roman Decanus
-	'''
-	pass
-
-
-class Centurion(BaseMinion):
-	'''
-		Roman Centurion
-	'''
-	pass
-
-
-class Legionary(BaseMinion):
-	'''
-		Roman Legionary
-	'''
-	pass
-
-
-class LegionaryORG(models.Model):
-	'''
-		LegionaryORG schematics
-	'''
-	servant = compound.ModelType(Servant)
-	decanus = compound.ModelType(Decanus)
-	centurion = compound.ModelType(Centurion)
-	legionary = compound.ModelType(Legionary)
-
-
+	# here you have a clean canvas.
+	scourges = compound.ModelType(Scourge)

@@ -88,8 +88,6 @@ class Node(Unit):
     '''
         Node basic data structure
     '''
-    cebus = types.URLType(default=False)
-    overlord =  types.URLType(default=True)
     minions = compound.ModelType(Unit)
     servants = compound.ModelType(Unit)
 

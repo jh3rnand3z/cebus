@@ -10,25 +10,58 @@
 __author__ = 'Jean Chassoul'
 
 
-# Remember Gabo Naum.
 
 
-class conturbernium(object)
+from cebus.messages import Node
+from cebus.messages.minions import Overlord
+
+
+# (unit), [node, cluster, cohort, cloud]
+
+
+class Conturbernium(Node):
 	'''
 		Soldiers of a contubernium shared a tent, 
 		and could be rewarded or punished together as a unit.
 	'''
+	centurion = types.URLType(default=False)
+    decanus =  types.URLType(default=True)
 
-class colonies
 
-class nodes
 
-class cohorts
+class Treant(Node):
+	'''
+		Treants are sentient tree forts with monkey characteristics. 
 
-class centurias
+		They are typically portrayed as protectors of the forests and
+		antagonists to industrialization and despoiling of nature. 
 
-class forests
 
-class cerebrates
+		The tree itself is a species of willow, most likely a weeping willow.
 
-class overlords
+		It appears to be completely hollow.
+
+		The entire interior of the tree trunk is covered in boards.
+	'''
+	cebus = types.URLType(default=False)
+	hawk = types.URLType(default=True)
+
+
+class Overlord(Overlord):
+	'''
+
+		The ZergORG do not use technology; Instead, they assimilate
+		other species' traits by directed mutation in order to match
+		such technology.
+
+		ZergORG units are designed to be cheap and fast to produce,
+		encouraging players to overwhelm their opponents with sheer
+		numbers.
+
+		Who has control over hordes of "minions"
+
+		Overlords provide control for your minions. 
+
+		As your forces grow in number, you must hatch more Overlords to control them.
+	'''
+	

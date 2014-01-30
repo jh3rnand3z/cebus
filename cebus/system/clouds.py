@@ -10,7 +10,6 @@
 __author__ = 'Jean Chassoul'
 
 
-
 import datetime as dt
 import pandas as pd
 
@@ -30,7 +29,7 @@ class Applications(object):
 
         Application API resources
     '''
-    
+
     @gen.engine
     def new_app_record(self, struct, callback):
         '''
@@ -41,16 +40,16 @@ class Applications(object):
         except Exception, e:
             callback(None, e)
             return
-        
+
         records = yield gen.Task(self.db.apps.insert, app)
         result, error = records.args
-            
+
         if error:
             callback(None, error)
             return
-        
+
         callback(str(result), None)
-    
+
     @gen.engine
     def get_app_record(self, account, app_id, callback):
         '''
@@ -69,10 +68,10 @@ class Applications(object):
         except Exception, e:
             callback(None, e)
             return
-        
+
         callback(app, None)
-    
-    
+
+
     @gen.engine
     def get_apps_records(self, account, elapse, start, stop, page, callback):
         '''
@@ -81,7 +80,7 @@ class Applications(object):
         page = int(page)
         page_size = self.settings['page_size']
         result = []
-        
+
         if not account:
             query = self.db.apps.find({'public':True})
         elif type(account) is list:
@@ -90,16 +89,16 @@ class Applications(object):
         else:
             query = self.db.apps.find({'accountcode':account,
                                         'assigned':True})
-        
+
         query = query.sort([('_id', -1)]).skip(page * page_size).limit(page_size)
-        
+
         try:
             for app in (yield motor.Op(query.to_list)):
                 result.append(applications.Application(**app).validate())
         except Exception, e:
             callback(None, e)
             return
-        
+
         callback({'results':result}, None)
     
 
