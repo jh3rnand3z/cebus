@@ -32,6 +32,10 @@ from tornado import gen
 
 from cebus.messages import Cluster, Cohort
 
+# back to the primitive!
+
+# http://en.wikipedia.org/wiki/Primitive_equations
+
 
 
 class BasicCommands(object):
@@ -66,21 +70,21 @@ class BasicCommands(object):
 			hold function
 		'''
 		return self.hold
-	
+
 	@property
 	def patrol(self):
 		'''
 			patrol function
 		'''
 		return self.patrol
-	
+
 	@property
 	def build(self):
 		'''
 			build function
 		'''
 		return self.build
-	
+
 	@property
 	def repair(self):
 		'''
@@ -166,7 +170,7 @@ class Cluster(object):
 		'''
 			Get cluster status
 		'''
-		
+
 
 
 class Cohort(object):

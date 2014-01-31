@@ -93,19 +93,6 @@ class LegionaryORG(models.Model):
 
 # the swarm
 
-class Queen(BaseMinion):
-	'''
-		ZergORG Queen
-	'''
-	pass
-
-
-class Cerebrate(Cluster):
-	'''
-		ZergORG Cerebrate
-	'''
-	pass
-
 
 class Larva(BaseMinion):
 	'''
@@ -114,14 +101,41 @@ class Larva(BaseMinion):
 	pass
 
 
-class Ling(Unit):
+class Queen(Larva):
+	'''
+		ZergORG Queen
+	'''
+	pass
+
+
+class Cerebrate(Larva):
+	'''
+		ZergORG Cerebrate
+	'''
+	pass
+
+
+class Overlord(Larva):
+	'''
+		Overlord
+		--------
+
+		Overlords provide control for your minions. 
+
+		As your forces grow in number, you must hatch more overlords to control them.
+	'''
+	queen = types.URLType(default=False)
+	cerebrate = types.URLType(default=True)
+
+
+class Ling(Larva):
 	'''
 		ZergORG Ling
 	'''
 	pass
 
 
-class Drone(BaseMinion):
+class Drone(Larva):
 	'''
 		ZergORG Drone
 	'''
@@ -132,6 +146,18 @@ class ZergORG(models.Model):
 	'''
 		ZergORG schematics
 		------------------
+
+		The ZergORG do not use technology; Instead, they assimilate
+		other species' traits by directed mutation in order to match
+		such technology.
+
+		ZergORG units are designed to be cheap and fast to produce,
+		encouraging players to overwhelm their opponents with sheer
+		numbers.
+
+		Who has control over hordes of "minions"
+
+
 
 		The Queen controls the Swarm through secondary agents called cerebrates. 
 
@@ -264,12 +290,16 @@ class CapuchinORG(models.Model):
 
 		bosques, squirrels, capuchinos, hawks, peccaries, howlers, scourges
 
-		el ultimo comodin, howlers communicacion, peccaries databases, 
+		el ultimo comodin, howlers communicacion, peccary databases, 
 		hawks supervisor overlords, capuchin standard legionary, 
 		squirrels are slaves, all live in the forest.
 
-		
+		La legion romana tenia 10 cohorts, 6 centurias por cohort, 
+		480 cores por humano, divididos en nodes de 8 unidades c/u. 
+		80 unidades por centuria.
 
+		El tropical cloud forest 4800 cores por cloud divididos en 10 cohorts, 
+		6 clusters por cohort, 10 nodos de 8 cores en cada cluster.
 
 	'''
 	cebus = compound.ModelType(Cebus)
@@ -280,8 +310,8 @@ class CapuchinORG(models.Model):
 
 class CapuchinImmunes(Unit):
 	'''
-		Immune units
-		------------
+		Capuching immune units
+		----------------------
 	
 		The inmune concept born again from the roman legion
 		just go a little back in time you!

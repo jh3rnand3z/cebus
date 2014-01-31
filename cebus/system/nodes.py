@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus nodes
+    Cebus nodes system logic
 '''
 # This file is part of cebus.
 
@@ -9,16 +9,19 @@
 
 __author__ = 'Jean Chassoul'
 
-from cebus.messages import Unit
-
 import json
+
+from cebus.messages.minions import Overlord
+from cebus.messages.nodes import Conturbernium
+from cebus.messages.nodes import Treant
+
 
 
 class Node(object):
 	'''
 		Cebus node logic
 	'''
-	
+
 	@gen.engine
 	def new_node(self, struct, callback):
 		'''

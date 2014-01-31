@@ -12,7 +12,10 @@ __author__ = 'Jean Chassoul'
 
 # Remember Gabo Naum.
 
+# system primitives:
+
 # unit, node, cluster, cohort, cloud... (5) five stuff rule.
+
 
 import uuid
 
@@ -92,6 +95,7 @@ class Node(Unit):
     servants = compound.ModelType(Unit)
 
     cores = types.IntType(default=8)
+    # D:
     total = types.IntType()
 
 
@@ -102,6 +106,7 @@ class Cluster(Unit):
     nodes = compound.ModelType(Node)
 
     cores = types.IntType(default=80)
+    # ojo este total esta mamando.
     total = types.IntType()
 
 
@@ -112,6 +117,7 @@ class Cohort(Unit):
     clusters = compound.ModelType(Cluster)
 
     cores = types.IntType(default=480)
+    # alchile?
     total = types.IntType()
 
 
@@ -122,4 +128,8 @@ class Cloud(Unit):
     cohorts = compound.ModelType(Cohort)
 
     cores = types.IntType(default=4800)
+    # it looks like it.
     total = types.IntType()
+
+# NOTA: el problema es con repetir una y otra vez el mismo total vacio, no es necesario ya que la shit se hereda de Unit.
+# testear esta hablada de mierda.

@@ -17,7 +17,6 @@ from schematics import types
 from schematics.types import compound
 
 from cebus.messages import Node
-from cebus.messages.minions import Larva
 
 
 
@@ -46,24 +45,3 @@ class Treant(Node):
 	'''
 	cebus = types.URLType(default=False)
 	hawk = types.URLType(default=True)
-
-
-class Overlord(Overlord):
-	'''
-
-		The ZergORG do not use technology; Instead, they assimilate
-		other species' traits by directed mutation in order to match
-		such technology.
-
-		ZergORG units are designed to be cheap and fast to produce,
-		encouraging players to overwhelm their opponents with sheer
-		numbers.
-
-		Who has control over hordes of "minions"
-
-		Overlords provide control for your minions. 
-
-		As your forces grow in number, you must hatch more Overlords to control them.
-	'''
-	queen = types.URLType(default=False)
-	cerebrate = types.URLType(default=True)
