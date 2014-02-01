@@ -12,6 +12,13 @@ __author__ = 'Jean Chassoul'
 
 # Remember Cangjie
 
+
+# System primitives:
+
+# unit, node, cluster, cohort, cloud. (5) five stuff rule.
+
+# post, get, head, patch, put, delete, options. (7) possible HTTP methods.
+
 '''
     Follow eve the black chuchawa
     -----------------------------

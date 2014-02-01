@@ -9,9 +9,20 @@
 
 __author__ = 'Jean Chassoul'
 
-
 import arrow
 import motor
+
+'''
+
+Revolutionary Open Source
+
+How to change the game by helping selfish people work together on your projects
+
+Pieter Hintjens
+ZeroMQ.org
+
+
+'''
 
 # import numpy as np
 # import pandas as pd
@@ -68,26 +79,26 @@ class Handler(BaseHandler):
 
             if not mango_accounts:
                 result = yield motor.Op(self.get_detail_records,
-                                       account=user, 
-                                       lapse=lapse,
-                                       start=start,
-                                       stop=stop,
-                                       page_num=page_num)
+                                        account=user, 
+                                        lapse=lapse,
+                                        start=start,
+                                        stop=stop,
+                                        page_num=page_num)
             else:
                 mango_accounts.append(user)
                 result = yield motor.Op(self.get_detail_records,
-                                       account=mango_accounts,
-                                       lapse=lapse,
-                                       start=start,
-                                       stop=stop,
-                                       page_num=page_num)
+                                        account=mango_accounts,
+                                        lapse=lapse,
+                                        start=start,
+                                        stop=stop,
+                                        page_num=page_num)
         else:
             result = yield motor.Op(self.get_detail_records,
-                                   account=None,
-                                   lapse=lapse,
-                                   start=start,
-                                   stop=stop,
-                                   page_num=page_num)
+                                    account=None,
+                                    lapse=lapse,
+                                    start=start,
+                                    stop=stop,
+                                    page_num=page_num)
         
         self.finish(json_util.dumps(result))
 
@@ -170,6 +181,8 @@ class Handler(BaseHandler):
     def put(self):
         '''
             node put handler
+
+            Replace a registered node
         '''
         pass
 
