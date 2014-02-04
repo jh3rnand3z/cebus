@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus minions handlers
+    Cebus HTTP minions handlers
 '''
+
 # This file is part of cebus.
 
 # Distributed under the terms of the last AGPL License. 

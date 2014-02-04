@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus daemons
+    Cebus daemons system logic.
 '''
 # This file is part of cebus.
 

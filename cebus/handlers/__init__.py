@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus base handlers
+    Cebus HTTP base handlers
 '''
+
 # This file is part of cebus.
 
 # Distributed under the terms of the last AGPL License. 
@@ -15,7 +16,7 @@ __author__ = 'Jean Chassoul'
 
 # System primitives:
 
-# unit, node, cluster, cohort, cloud. (5) five stuff rule.
+# Unit, Node, Cluster, Cohort, Cloud. (5) five stuff rule.
 
 # post, get, head, patch, put, delete, options. (7) possible HTTP methods.
 

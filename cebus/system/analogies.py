@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus analogies
+    Cebus analogies system logic.
 '''
 # This file is part of cebus.
 

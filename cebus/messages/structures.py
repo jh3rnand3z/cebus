@@ -2,6 +2,7 @@
 '''
     Cebus structures models and messages
 '''
+
 # This file is part of cebus.
 
 # Distributed under the terms of the last AGPL License. 

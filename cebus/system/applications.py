@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus applications
+    Cebus applications system logic.
 '''
 # This file is part of cebus.
 

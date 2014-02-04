@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus clouds
+    Cebus clouds system logic.
 '''
 # This file is part of cebus.
 

@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus nodes handlers
+    Cebus HTTP nodes handlers
 '''
+
 # This file is part of cebus.
 
 # Distributed under the terms of the last AGPL License. 

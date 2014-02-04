@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus stations
+    Cebus stations system logic.
 '''
 # This file is part of cebus.
 

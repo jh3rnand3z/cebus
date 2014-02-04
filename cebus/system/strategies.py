@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus strategies
+    Cebus strategies system logic.
 '''
 # This file is part of cebus.
 

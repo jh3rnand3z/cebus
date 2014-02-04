@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus behaviours
+    Cebus behaviours system logic.
 '''
 # This file is part of cebus.
 
@@ -8,7 +8,6 @@
 # The full license is in the file LICENCE, distributed as part of this software.
 
 __author__ = 'Jean Chassoul'
-
 
 
 class MinionActions

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus structures
+    Cebus structures system logic.
 '''
 # This file is part of cebus.
 
