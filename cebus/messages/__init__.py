@@ -15,10 +15,9 @@ __author__ = 'Jean Chassoul'
 
 # System primitives:
 
-# Unit, Node, Cluster, Cohort, Cloud.
-# (5) five stuff rule.
+# Unit, Node, Cluster, Cohort, Cloud. (5) five stuff rule.
 
-# post, get, head, patch, put, delete, options. (7) Possible HTTP methods.
+# post, get, head, patch, put, delete, options. (7) Current HTTP methods.
 
 import uuid
 

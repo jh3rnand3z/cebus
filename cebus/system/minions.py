@@ -18,7 +18,7 @@ from tornado import gen
 
 from cebus.messages import minions
 
-
+# drones, overlord, guardian, capuchin, wizard, 
 
 class Minions(object):
     '''

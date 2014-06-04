@@ -73,7 +73,6 @@ from cebus.handlers import clouds
 from cebus.handlers import daemons
 from cebus.handlers import goals
 from cebus.handlers import minions
-from cebus.handlers import stations
 from cebus.handlers import strategies
 
 from cebus.tools import options
@@ -152,9 +151,9 @@ if __name__ == '__main__':
         (r'/minions/(?P<minion_uuid>.+)/?', minions.Handler),
         (r'/minions/?', minions.Handler),
 
-        # stations
-        #(r'/stations/(?P<station_uuid>.+)/?', stations.Handler),
-        #(r'/stations/?', stations.Handler)
+        # structures
+        #(r'/structures/(?P<structure_uuid>.+)/?', structures.Handler),
+        #(r'/structures/?', structures.Handler)
 
         # strategies
         #(r'/strategies/(?P<strat_uuid>.+)/?', strategies.Handler),
