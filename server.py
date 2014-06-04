@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 '''
-    Central Execution Bus UNIX System Utility Supervisor.
-    
-    Cebus Artificial Intelligence system; cebus 
-    is a ai utility supervisor for computing clouds.
+    Cebus AI Monkeys
+    ----------------
+    Central Execution Bus Unit System AI Supervisor.
+
+    Cebus AI supervisor for computing legionary clouds.
 '''
 
 # This file is part of cebus.
@@ -44,18 +45,12 @@
 # provisioning and migration dont make slaves out of humans
 # if he can't fix by it self you can't fix it.
 
-# ORGS !
-
-# Define Paradigm 
-# ORG Organization of Restricted Generality
-# orgs are computer organizations but people are integral to their operation.
+# ORG Organization of Restricted Generality.
+# ------------------------------------------
+# ORGs are computer organizations but people are integral to their operation.
 
 # goals and computational processing are followed and executed 
-# by the abstract figure of a capuchin minion.
-
-# more on peer-to-peer communicatin
-# http://en.wikipedia.org/wiki/Bencode
-
+# by the abstract figure of a minion.
 
 __author__ = 'Jean Chassoul'
 
@@ -102,12 +97,15 @@ fun = []
 # e_tag
 e_tag = False
 
-
+# salt master centurion.
 master_opts = salt.config.master_config(
     os.environ.get('SALT_MASTER_CONFIG', './salt/master')
 )
 
 local = salt.client.LocalClient()
+
+# more on peer-to-peer communicatin
+# http://en.wikipedia.org/wiki/Bencode
 
 
 if __name__ == '__main__':
@@ -127,10 +125,10 @@ if __name__ == '__main__':
         #(r'/analogies/?', analogies.Handler),
 
         # applications
-        (r'/apps/(?P<app_uuid>.+)/?', applications.Handler),
-        (r'/apps/?', applications.Handler),
+        (r'/applications/(?P<app_uuid>.+)/?', applications.Handler),
+        (r'/applications/?', applications.Handler),
 
-        # applications
+        # behaviours
         # (r'/behaviours/(?P<behaviour_uuid>.+)/?', behaviours.Handler),
         # (r'/behaviours/?', behaviours.Handler),
 

@@ -91,13 +91,9 @@ class Node(object):
         result = []
 
         if not account:
-
             query = self.db.nodes.find({'public':True})
-
         elif type(account) is list:
-
             accounts = [{'account':a, 'assigned': True} for a in account]
-
             query = self.db.nodes.find({'$or':accounts})
         else:
             query = self.db.nodes.find({'account':account,

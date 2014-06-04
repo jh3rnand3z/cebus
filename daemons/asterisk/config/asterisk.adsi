@@ -4,9 +4,8 @@
 ;
 ; Begin with the preamble requirements
 ;
-DESCRIPTION "Asterisk PBX"		; Name of vendor
+DESCRIPTION "RTC Worker"				; Name of vendor
 VERSION 0x00						; Version of stuff
-;SECURITY "_AST"					; Security code
 SECURITY 0X9BDBF7AC				; Security code
 FDN 0x0000000F						; Descriptor number
 
@@ -156,4 +155,3 @@ SUB "stableCall" IS
 		SHOWDISPLAY "callended" AT 2
 	ENDIF
 ENDSUB
-

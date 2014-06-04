@@ -14,28 +14,6 @@ __author__ = 'Jean Chassoul'
 # Remember Cangjie
 
 
-# System primitives:
-
-# Unit, Node, Cluster, Cohort, Cloud. (5) five stuff rule.
-
-# post, get, head, patch, put, delete, options. (7) possible HTTP methods.
-
-'''
-    Follow eve the black chuchawa
-    -----------------------------
-
-    HTTP status code is primarily divided into five groups for better 
-    explanation of request and responses between client and server as named:
-
-    Informational 1XX,
-    Successful 2XX,
-    Redirection 3XX,
-    
-    Client Error 4XX
-        and
-            Server Error 5XX.
-'''
-
 import motor
 
 from tornado import gen
@@ -67,17 +45,17 @@ from cebus.tools import errors
     By being specified in these documents their semantics are well known 
     and can be depended upon.
 
-    Any client can use any method and the server can be configured to support 
-    any combination of methods.
+    Any client can use any method and the server can be configured 
+    to support any combination of methods.
 
-    If a method is unknown to an intermediate it will be treated as an unsafe 
-    and non-idempotent method.
+    If a method is unknown to an intermediate it will be treated 
+    as an unsafe and non-idempotent method.
 
-    There is no limit to the number of methods that can be defined and this allows 
-    for future methods to be specified without breaking existing infrastructure. 
+    There is no limit to the number of methods that can be defined 
+    and this allows for future methods to be specified without 
+    breaking existing infrastructure. 
 
     RFC5789 specified the PATCH method.
-
 
     so... after all that stuff, we're coding on:
 
@@ -96,8 +74,8 @@ from cebus.tools import errors
         without having to transport the entire content.
 
     POST
-        Requests that the server accept the entity enclosed in the request as a new subordinate
-        of the web resource identified by the URI.
+        Requests that the server accept the entity enclosed in the request 
+        as a new subordinate of the web resource identified by the URI.
 
         The data POSTed might be, as examples, an annotation for existing resources; 
         a message for a bulletin board, newsgroup, mailing list, or comment thread; 
@@ -107,8 +85,9 @@ from cebus.tools import errors
     PUT
         Requests that the enclosed entity be stored under the supplied URI. 
 
-        If the URI refers to an already existing resource, it is modified; if the URI does 
-        not point to an existing resource, then the server can create the resource with that URI.
+        If the URI refers to an already existing resource, it is modified; 
+        if the URI does not point to an existing resource, then the server 
+        can create the resource with that URI.
 
     DELETE
         Deletes the specified resource.
@@ -161,9 +140,12 @@ class BaseHandler(web.RequestHandler):
         '''
             Cebus default headers
         '''
+
+        # DOMAIN
+
         self.set_header("Access-Control-Allow-Origin", "cebus.ca")
     
-    def get_current_user(self):
+    def get_current_username(self):
         '''
             Return the username from a secure cookie
         '''
