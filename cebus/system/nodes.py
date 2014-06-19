@@ -27,11 +27,8 @@ class Node(object):
     @gen.engine
     def new_node(self, struct, callback):
         '''
-            Spawn node
+            Spawn More Overlords
         '''
-
-        # validar el tipo de especie del nodo.
-
         try:
             node = nodes.Node(struct)
             node.validate()
@@ -82,7 +79,7 @@ class Node(object):
 
 
 	@gen.engine
-    def get_nodes(self, account, callback):
+    def get_node_lists(self, account, callback):
         '''
             Get nodes
         '''
@@ -116,13 +113,12 @@ class Node(object):
         callback(results, None)
 
 
-	@gen.engine
-	def head_description(self, struct, callback):
-		'''
-		    Node head description
-		'''
-        # To be done by other fun head.
-        pass
+	#@gen.engine
+	#def head_description(self, struct, callback):
+	#	'''
+	#	    Node head description
+	#	'''
+    #    pass
 
 
     @gen.engine
@@ -130,9 +126,8 @@ class Node(object):
         '''
             Patch node
         '''
-        # To be done by other fun head.
-        pass	
 
+        pass
 
 	@gen.engine
 	def delete_node(self, node_uuid, callback):
@@ -147,7 +142,6 @@ class Node(object):
             return
 
         callback(result, None)
-
 
     @gen.engine
     def replace_node(self, struct, callback):
@@ -174,30 +168,30 @@ class Node(object):
 
         callback(node.get('uuid'), None)
 
-
 	@gen.engine
 	def assign_node(self, struct, callback):
 		'''
 			Assign node
 		'''
-
+        pass
 
 	@gen.engine
 	def check_exist(self, struct, callback):
 		'''
 			Check if node exist
 		'''
-
+        pass
 
 	@gen.engine
 	def check_type(self, struct, callback):
 		'''
 			Check node type
 		'''
-
+        pass
 
 	@gen.engine
 	def get_status(self, struct, callback):
 		'''
 			Get node status
 		'''
+        pass

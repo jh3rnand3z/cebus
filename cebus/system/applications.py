@@ -20,23 +20,21 @@ from tornado import gen
 from bson import json_util
 from bson import objectid
 
-from cebus.messages import applications
+from cebus.messages import applications as apps
 
 
 class Applications(object):
     '''
-        Cebus applications API
-
-        Application API resources
+        Application resources
     '''
     
     @gen.engine
-    def new_app_record(self, struct, callback):
+    def new_app(self, struct, callback):
         '''
             Create a new application record
         '''
         try:
-            app = applications.Application(**struct).validate()
+            app = apps.Application(**struct).validate()
         except Exception, e:
             callback(None, e)
             return
@@ -49,9 +47,9 @@ class Applications(object):
             return
         
         callback(str(result), None)
-    
+
     @gen.engine
-    def get_app_record(self, account, app_id, callback):
+    def get_app(self, account, app_uuid, callback):
         '''
             Get a single application record
         '''
@@ -70,10 +68,9 @@ class Applications(object):
             return
         
         callback(app, None)
-    
-    
+
     @gen.engine
-    def get_apps_records(self, account, elapse, start, stop, page, callback):
+    def get_app_list(self, account, lapse, start, end, page, callback):
         '''
             Get a list of records from multiple applications
         '''
@@ -100,7 +97,6 @@ class Applications(object):
             return
         
         callback({'results':result}, None)
-    
 
     @gen.engine
     def remove_app(self, app_id, callback):

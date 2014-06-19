@@ -168,3 +168,13 @@ if __name__ == '__main__':
     application.listen(options.port)
     logging.info('Listening on http://%s:%s' % (options.host, options.port))
     tornado.ioloop.IOLoop.instance().start()
+
+    '''
+
+        If we believe in data structures, we must believe in independent (hence simultaneous) processing. 
+
+        For why else would we collect items within a structure? 
+
+        Why do we tolerate languages that give us the one without the other?
+
+    '''

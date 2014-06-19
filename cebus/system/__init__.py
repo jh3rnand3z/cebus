@@ -13,29 +13,9 @@
 __author__ = 'Jean Chassoul'
 
 
-# The hunter told him that this was, without a doubt, the hoof print 
-# of a Pixiu, being different from the hoof-print of any other beast alive.
-#
-# His conversation with the hunter greatly inspired Cangjie, leading him to 
-# believe that if he could capture in a drawing the special characteristics
-# that set apart each and every thing on the earth, this would truly be the
-# perfect kind of character for writing. 
-#
-# From that day forward, Cangjie paid close attention to the characteristics
-# of all things, including the sun, moon, stars, clouds, lakes, oceans, 
-# as well as all manner of bird and beast.
-#
-# He began to create characters according to the special characteristics
-# he found, and before long, had compiled a long list of characters for writing.
-
 from tornado import gen
 
 from cebus.messages import Cluster, Cohort
-
-# back to the primitive!
-
-# http://en.wikipedia.org/wiki/Primitive_equations
-
 
 
 class BasicCommands(object):
