@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus HTTP campaings handlers
+    Cebus HTTP campaigns handlers
 '''
 
 # This file is part of cebus.

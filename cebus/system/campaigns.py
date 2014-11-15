@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus campaings system logic.
+    Cebus campaigns system logic.
 '''
 # This file is part of cebus.
 

@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus AI Monkeys
-    ----------------
-    Central Execution Bus Unit System AI Supervisor.
-
-    Cebus AI supervisor for computing legionary clouds.
+    Cebus AI computing legionary clouds.
 '''
 
 # This file is part of cebus.
@@ -21,10 +17,14 @@
 # it sounds all like nonsense but have strong powerful magics!
 # lets see what this is all about.
 
+# mango: Manage Asynchronous Number of General ORGs
+
+# Organizations of Roman Generality (ORGs)
+
 # -- A Cohort is the basic tactical ORG system.
 
 # A computing cohort have the power of 480 cores; a cohort consist of
-# six centurias of 80 units used to follow campaings with defined goals 
+# six centurias of 80 units used to follow campaigns with defined goals 
 # and strategies to achive those goals using strategies and analogies.
 
 # cores can also be virtual cpu's or cloud computing units.
@@ -67,12 +67,17 @@ from cebus.handlers import HomeHandler
 
 from cebus.handlers import analogies
 from cebus.handlers import applications
-from cebus.handlers import campaings
+from cebus.handlers import campaigns
 from cebus.handlers import clouds
+from cebus.handlers import clusters
+from cebus.handlers import cohorts
 from cebus.handlers import daemons
 from cebus.handlers import goals
+from cebus.handlers import machines
 from cebus.handlers import minions
+from cebus.handlers import nodes
 from cebus.handlers import strategies
+from cebus.handlers import structures
 
 from cebus.tools import options
 
@@ -126,9 +131,9 @@ if __name__ == '__main__':
         (r'/applications/(?P<app_uuid>.+)/?', applications.Handler),
         (r'/applications/?', applications.Handler),
 
-        # campaings
-        #(r'/campaings/(?P<campaing_uuid>.+)/?', campaings.Handler),
-        #(r'/campaings/?', campaings.Handler),
+        # campaigns
+        #(r'/campaigns/(?P<campaing_uuid>.+)/?', campaigns.Handler),
+        #(r'/campaigns/?', campaigns.Handler),
 
         # clouds
         (r'/clouds/(?P<cloud_uuid>.+)/?', clouds.Handler),

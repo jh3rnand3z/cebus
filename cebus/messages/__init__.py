@@ -52,7 +52,7 @@ class Resource(models.Model):
     applications = compound.ModelType(ResourceContainer)
     analogies = compound.ModelType(ResourceContainer)
     behaviours = compound.ModelType(ResourceContainer)
-    campaings = compound.ModelType(ResourceContainer)
+    campaigns = compound.ModelType(ResourceContainer)
 
     goals = compound.ModelType(ResourceContainer)
     strategies = compound.ModelType(ResourceContainer)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-    Cebus campaings models and messages
+    Cebus campaigns models and messages
 '''
 
 # This file is part of cebus.
