@@ -13,7 +13,7 @@
 # license is in the file LICENCE, distributed as part of this
 # software.
 
-# Remember Cangjie, search for the Pixiu.
+# Chinese analogies: Cangjie search for the Pixiu.
 
 # Welcome to the central execution background unit system bus 
 # unix supervisor; central artificial intelligence actor system.
@@ -21,19 +21,17 @@
 # it sounds all like nonsense but have strong powerful magics!
 # lets see what this is all about.
 
-# A Cohort is the basic tactical ORG system.
+# -- A Cohort is the basic tactical ORG system.
 
 # A computing cohort have the power of 480 cores; a cohort consist of
 # six centurias of 80 units used to follow campaings with defined goals 
 # and strategies to achive those goals using strategies and analogies.
 
 # cores can also be virtual cpu's or cloud computing units.
-# cebus works with a default set of 10 cohorts maximum per cloud.
-# that settings can be changed at will but in cloud computing we're trying 
-# to define some internal vocabulary in where a cebus cloud is always
-# a system with 4800 cpu's max, two clouds 9600 units, etc.
+# cebus works with a default set of 10 cohorts maximum per cloud legion.
 
-# Strategy and tactics
+
+# -- Strategy and tactics
 
 # 0 Setting a goal
 # 1 Strategy for achieving a goal
@@ -47,6 +45,8 @@
 
 # ORG Organization of Restricted Generality.
 # ------------------------------------------
+# 
+# ORG Organization of Restricted Generality. 
 # ORGs are computer organizations but people are integral to their operation.
 
 # goals and computational processing are followed and executed 
@@ -67,7 +67,6 @@ from cebus.handlers import HomeHandler
 
 from cebus.handlers import analogies
 from cebus.handlers import applications
-from cebus.handlers import behaviours
 from cebus.handlers import campaings
 from cebus.handlers import clouds
 from cebus.handlers import daemons
@@ -126,10 +125,6 @@ if __name__ == '__main__':
         # applications
         (r'/applications/(?P<app_uuid>.+)/?', applications.Handler),
         (r'/applications/?', applications.Handler),
-
-        # behaviours
-        # (r'/behaviours/(?P<behaviour_uuid>.+)/?', behaviours.Handler),
-        # (r'/behaviours/?', behaviours.Handler),
 
         # campaings
         #(r'/campaings/(?P<campaing_uuid>.+)/?', campaings.Handler),

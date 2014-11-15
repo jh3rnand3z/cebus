@@ -1,9 +1,0 @@
-http://www.postgresql.org/download/linux/debian/
-
-http://www.postgresql.org/docs/9.3/static/index.html
-
-http://www.postgresql.org/docs/9.3/static/backup-dump.html
-
-https://wiki.debian.org/PostgreSql
-
-aptitude install 
